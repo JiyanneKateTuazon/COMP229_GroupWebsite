@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .welcome-message {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sign Up</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Create Your Account</h2>
+            <form action="/signup" method="POST" id="signupForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+        </section>
+
+        <!-- Welcome message section, initially hidden -->
+        <section id="welcomeMessage" class="welcome-message" style="display: none;">
+            <p>Welcome! Your account has been successfully created. You need to sign in now.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 JAL Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to show welcome message after successful signup
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form submission refresh
+
+            // Simulate successful sign-up (this should be replaced with actual backend logic)
+            setTimeout(function() {
+                // Hide the form and show the welcome message
+                document.querySelector(".form-container").style.display = "none";
+                document.getElementById("welcomeMessage").style.display = "block";
+            }, 500); // Delay to simulate server processing time
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional styles for the green button */
+    .back-to-home {
+      display: inline-block;
+      text-decoration: none;
+      background: #16a085;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-top: 20px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .back-to-home:hover {
+      background: #1abc9c;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c3e50;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sign In</h1>
+  </header>
+  <main>
+    <form id="signInForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Sign In</button>
+    </form>
+    <!-- Green button for back to home -->
+    <a href="/" class="back-to-home">Back to Home</a>
+  </main>
+
+  <!-- Footer with copyright -->
+  <footer>
+    © 2024 JAL Website. All rights reserved.
+  </footer>
+
+  <script>
+    // JavaScript to handle sign-in and redirect
+    document.getElementById("signInForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent form submission refresh
+
+      // Capture the username from the form
+      const userName = document.getElementById("username").value;
+
+      // Store the username in sessionStorage
+      sessionStorage.setItem("userName", userName);
+
+      // Redirect to the welcome page
+      window.location.href = "/welcome.html";
+    });
+  </script>
+</body>
+</html>

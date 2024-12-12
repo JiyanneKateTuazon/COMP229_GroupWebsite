@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Style for the Home button in the header */
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 15px;
+            background: #16a085;
+            border-radius: 5px;
+            transition: background 0.3s;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        header nav a:hover {
+            background: #1abc9c;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome!</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-message">
+            <p>Welcome, <strong id="userName"></strong>! You have successfully signed in.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Your Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Display the user's name from sessionStorage or localStorage
+        const userName = sessionStorage.getItem("userName") || "Guest";
+        document.getElementById("userName").textContent = userName;
+    </script>
+</body>
+</html>
